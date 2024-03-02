@@ -10,8 +10,11 @@
 ## BCNF
 
 Composition Name -> BWV Num, CD Label, CD ID, Instrument
+
 CD ID -> CD Title, CD Label, Performer, Orchestra, Conductor, Time
+
 BWV Num -> Composition Name
+
 
 ## Tables
 
