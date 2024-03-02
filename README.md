@@ -17,8 +17,50 @@ BWV Num -> Composition Name
 
 
 ## Tables
+```
+CREATE TABLE CDs (
+    CD_Title VARCHAR(255),
+    CD_ID VARCHAR(100) PRIMARY KEY,
+    CD_Label VARCHAR(255),
+    Performer VARCHAR(255),
+    Orchestra VARCHAR(255),
+    Conductor VARCHAR(255),
+    Time VARCHAR(20),
+    Radio_Catalog_Number INT AUTO_INCREMENT,
+    UNIQUE KEY (CD_ID),
+    UNIQUE KEY (Radio_Catalog_Number)
+);
+
+LOAD DATA LOCAL INFILE '/home/niuniu/Documents/DatabaseAssignment3/Labb3_list1.csv'
+INTO TABLE CDs
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+```
+```
+CREATE TABLE Compositions (
+    Composition_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Composition_Name VARCHAR(255),
+    BWV_Num VARCHAR(255),
+    CD_Label VARCHAR(255),
+    CD_ID VARCHAR(100),
+    Instrument VARCHAR(255),
+    UNIQUE KEY (Composition_Name, BWV_Num, CD_ID),
+    FOREIGN KEY (CD_ID) REFERENCES CDs(CD_ID)
+);
 
 
+LOAD DATA LOCAL INFILE '/home/niuniu/Documents/DatabaseAssignment3/Labb3_list2.csv'
+INTO TABLE Compositions
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(Composition_Name, BWV_Num, CD_Label, CD_ID, Instrument);
+
+```
 
 ## Results
 
