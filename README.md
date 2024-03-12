@@ -3,6 +3,8 @@
 
 ## Introduction
 
+According to the requirements, I generated a Radio_catalog_number. The radio_catalog_number is automatically incremented. I am aware that the CD_ID is unique, so I set up the CD_ID as the primary key in the table CDs. Both Radio_catalog_number and CD_ID are unique. Compared with creating CD1 and CD2 through Excel, I decided to use another method to address the problem. I set up a column, Composition_ID, as the primary key in the table Compositions. The Composition_ID is unique and automatically incremented. In comparison with 1NF and 2NF, the database is in BCNF. Consequently, I attempted to address SQL questions. 
+
 ## ER-diagram
 
 ![image1](https://raw.githubusercontent.com/niuniu268/Database3/e5ba3a66fd274d9f157f588fdafafcd079342ec3/ER%20Diagram.drawio.svg)
@@ -79,3 +81,4 @@ IGNORE 1 LINES
 
 ## Summary
 
+This is a valuable experience to practice designing a relational database and writing SQL queries.
