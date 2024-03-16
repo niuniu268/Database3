@@ -7,7 +7,38 @@ According to the requirements, I generated a Radio_catalog_number. The radio_cat
 
 ## ER-diagram
 
-![image1](https://raw.githubusercontent.com/niuniu268/Database3/e5ba3a66fd274d9f157f588fdafafcd079342ec3/ER%20Diagram.drawio.svg)
++----------------+             +---------------------+              +-----------------------+               +-------------+
+|     CDs        |-------------|     Compositions    |--------------|       CD_Label         |---------------|  Performer  |
++----------------+             +---------------------+              +-----------------------+               +-------------+
+| CD_No (PK)     |             | Composition_ID (PK) |              | CD_Label_Index (PK)   |               | Performer_Index (PK) |
+| CD_Title       |             | Composition_Name    |              | CD_Label              |               | Performer             |
+| CD_ID          |             | BWV_Num             |              +-----------------------+               +-------------+
+| CD_Label (FK)  |             | Instrument (FK)     |                                                      | Performer           |
+| Performer (FK) |             | CD_No (FK)          |                                                      +-------------+
+| Orchestra_Conductor (FK) |                                                                                   
++----------------+             +---------------------+                                                          
+                                                                  +---------------------------+
+                                                                  |     Orchestra_Conductor   |
+                                                                  +---------------------------+
+                                                                  | Orchestra_Conductor_Index |
+                                                                  | Orchestra                  |
+                                                                  | Conductor                  |
+                                                                  +---------------------------+
+                                                                  | Orchestra/Conductor       |
+                                                                  +---------------------------+
+                                                                  | Orchestra                  |
+                                                                  | Conductor                  |
+                                                                  +---------------------------+
+                                                                  | Conductor                  |
+                                                                  +---------------------------+
+
++----------------+
+|   Instrument   |
++----------------+
+| Instrument_Index (PK) |
+| Instrument           |
++-----------------------+
+
 
 ## BCNF
 
